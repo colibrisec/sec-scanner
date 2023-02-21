@@ -1,7 +1,5 @@
 description: >
   Run a vulnerability scan of your code repository
 
-executor: default
-
 steps:
   - config-scan

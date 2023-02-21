@@ -1,8 +1,6 @@
 description: >
   Run a vulnerability scan of your code repository
 
-executor: default
-
 parameters:
   severity:
     type: string
