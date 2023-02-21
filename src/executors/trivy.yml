@@ -1,0 +1,11 @@
+description: >
+  Zap Proxy Weekly Build Container for performing DAST Scanning
+docker:
+  - image: 'aquasec/trivy:<<parameters.tag>>'
+parameters:
+  tag:
+    default: latest
+    description: >
+      Pick a specific cimg/node image variant:
+      https://hub.docker.com/r/aquasec/trivy/tags
+    type: string
