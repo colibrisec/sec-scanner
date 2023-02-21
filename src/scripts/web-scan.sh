@@ -6,4 +6,4 @@ if [ ! -f "$FILE" ]; then
   tar zxvf "$FILE"
 fi
 cd "${FOLDER}"
-./zap.sh -quickurl "${PARAM_URL}" -quickprogress -quickout ../zapreport.json
+./zap.sh -cmd -quickurl "${PARAM_URL}" -quickprogress -quickout ../zapreport.json
