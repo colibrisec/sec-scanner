@@ -1,0 +1,12 @@
+description: >
+  Run a DAST Web Scan using ZAProxy
+
+executor: default
+
+parameters:
+  url:
+    type: string
+    description: "URL to Scan"
+steps:
+  - web-scan:
+      url: << parameters.url >>

@@ -1,16 +1,13 @@
 description: >
-  This command echos "Hello World" using file inclusion.
-# What will this command do?
-# Descriptions should be short, simple, and clear.
-# Perform DAST ZAP scan
+  Perform DAST ZAP Web Scan
+
 parameters:
-  to:
+  url:
     type: string
-    default: "World"
-    description: "Hello to whom?"
+    description: "URL to scan"
 steps:
   - run:
       environment:
-        PARAM_TO: <<parameters.to>>
-      name: Hello Greeting
+        PARAM_URL: <<parameters.url>>
+      name: Web Scan
       command: <<include(scripts/web-scan.sh)>>

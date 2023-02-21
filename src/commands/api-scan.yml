@@ -1,16 +1,13 @@
 description: >
-  This command echos "Hello World" using file inclusion.
-# What will this command do?
-# Descriptions should be short, simple, and clear.
-# Perform DAST ZAP API Scan
+  Perform DAST ZAP API Scan
+
 parameters:
-  to:
+  url:
     type: string
-    default: "World"
-    description: "Hello to whom?"
+    description: "URL of API to scan"
 steps:
   - run:
       environment:
-        PARAM_TO: <<parameters.to>>
-      name: Hello Greeting
+        PARAM_URL: <<parameters.url>>
+      name: API Scan
       command: <<include(scripts/api-scan.sh)>>

@@ -17,6 +17,8 @@ jobs:
           severity: "CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN"
           ignore-unfixed: true
       - sec-scanner/config-scan
+      - sec-scanner/web-scan:
+          url: "http://example.com"
 workflows:
   test-deploy:
     jobs:
