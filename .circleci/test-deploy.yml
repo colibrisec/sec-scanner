@@ -19,6 +19,7 @@ jobs:
       - sec-scanner/config-scan
       - sec-scanner/web-scan:
           url: "http://example.com"
+          run: java --version
 workflows:
   test-deploy:
     jobs:
