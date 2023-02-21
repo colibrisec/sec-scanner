@@ -24,7 +24,7 @@ workflows:
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
-          orb-name: colibrisec/scanner
+          orb-name: colibrisec/sec-scanner
           vcs-type: << pipeline.project.type >>
           pub-type: production
           requires:
