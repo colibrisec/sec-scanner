@@ -1,6 +1,5 @@
 description: >
-  Sample description
-# What will this job do?
+  Run a vulnerability scan of your code repository
 
 executor: default
 
