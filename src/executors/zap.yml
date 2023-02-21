@@ -1,11 +1,11 @@
 description: >
   Zap Proxy Weekly Build Container for performing DAST Scanning
 docker:
-  - image: 'owasp/zap2docker-weekly:<<parameters.tag>>'
+  - image: 'cimg/openjdk:<<parameters.tag>>'
 parameters:
   tag:
-    default: latest
+    default: 19.0.2
     description: >
       Pick a specific cimg/node image variant:
-      https://hub.docker.com/r/owasp/zap2docker-weekly/tags
+      https://hub.docker.com/r/cimg/openjdk/tags
     type: string
