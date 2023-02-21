@@ -16,6 +16,7 @@ jobs:
       - sec-scanner/repo-scan:
           severity: "CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN"
           ignore-unfixed: true
+      - sec-scanner/config-scan
 workflows:
   test-deploy:
     jobs:

@@ -1,23 +1,7 @@
 description: >
-  This command echos "Hello World" using file inclusion.
-# What will this command do?
-# Descriptions should be short, simple, and clear.
-# Perform Trivy repo scan
-parameters:
-  severity:
-    type: string
-    default: "CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN"
-    description: "Severity of vulnerabilities to scan (CRITICAL, HIGH, MEDIUM, LOW, UNKOWN)"
-  ignore-unfixed:
-    type: boolean
-    default: true
-    description: "Ignore vulnerabilities without fixes"
-  exclude-dir:
-    type: string
-    description: "Exclude directory"
+  Configuration Scan of Code Repository
+
 steps:
   - run:
-      environment:
-        PARAM_SEVERITY: <<parameters.severity>>
-      name: Hello Greeting
+      name: Infrastructure and Configuration Scan
       command: <<include(scripts/config-scan.sh)>>
