@@ -1,0 +1,16 @@
+description: >
+  Sample example description.
+# Provide a use-case based example for using this orb.
+# Everything in the `usage` section will be displayed in the orb registry.
+# Comments are not retained.
+usage:
+  version: 2.1
+  orbs:
+    scanner: colibrisec/scanner@1.2.3
+  workflows:
+    use-my-orb:
+      jobs:
+        - colibrisec/repo-scan
+        - colibrisec/config-scan
+        - colibrisec/web-scan
+        - colibrisec/api-scan

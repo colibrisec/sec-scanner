@@ -1,0 +1,19 @@
+description: >
+  Perform Trivy repo scan
+parameters:
+  severity:
+    type: string
+    default: "CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN"
+    description: "Severity of vulnerabilities to scan (CRITICAL, HIGH, MEDIUM, LOW, UNKOWN)"
+  ignore-unfixed:
+    type: boolean
+    default: true
+    description: "Ignore vulnerabilities without fixes"
+
+steps:
+  - run:
+      environment:
+        PARAM_SEVERITY: <<parameters.severity>>
+        PARAM_IGNOREUNFIXED: <<parameters.ignore-unfixed>>
+      name: Vulnerability Scan Repository Code
+      command: <<include(scripts/repo-scan.sh)>>

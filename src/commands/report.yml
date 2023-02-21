@@ -1,0 +1,18 @@
+description: >
+  This command echos "Hello World" using file inclusion.
+# What will this command do?
+# Descriptions should be short, simple, and clear.
+# Attach report as artifact and post to endpoint
+parameters:
+  url:
+    type: string
+    description: "Reporting Server URL"
+  token:
+    type: string
+    description: "Authorization Token"
+steps:
+  - run:
+      environment:
+        PARAM_URL: <<parameters.url>>
+      name: Hello Greeting
+      command: <<include(scripts/report.sh)>>

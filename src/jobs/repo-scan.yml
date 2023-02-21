@@ -1,0 +1,14 @@
+description: >
+  Sample description
+# What will this job do?
+
+executor: default
+
+parameters:
+  severity:
+    type: string
+    default: "CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN"
+    description: "Severity of Vulnerabilities to check"
+steps:
+  - repo-scan:
+      severity: << parameters.severity >>
