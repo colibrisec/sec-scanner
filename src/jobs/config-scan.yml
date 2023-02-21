@@ -1,7 +1,7 @@
 description: >
   Run a vulnerability scan of your code repository
 
-executor: trivy
+executor: default
 
 steps:
   - config-scan
