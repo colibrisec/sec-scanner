@@ -1,0 +1,38 @@
+version: 2.1
+orbs:
+  <orb-name>: colibrisec/scanner@dev:<<pipeline.git.revision>>
+  orb-tools: circleci/orb-tools@11.5
+
+filters: &filters
+  tags:
+    only: /.*/
+
+jobs:
+  command-tests:
+    docker:
+      - image: cimg/base:current
+    steps:
+      - checkout
+      - scanner/repo-scan:
+          severity: "CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN"
+          ignore-unfixed: true
+workflows:
+  test-deploy:
+    jobs:
+      - command-tests:
+          filters: *filters
+      - orb-tools/pack:
+          filters: *filters
+      - orb-tools/publish:
+          orb-name: colibrisec/scanner
+          vcs-type: << pipeline.project.type >>
+          pub-type: production
+          requires:
+            - orb-tools/pack
+            - command-tests
+          context: orb-publishing
+          filters:
+            branches:
+              ignore: /.*/
+            tags:
+              only: /^v[0-9]+\.[0-9]+\.[0-9]+$/
