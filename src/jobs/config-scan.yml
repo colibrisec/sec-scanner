@@ -4,5 +4,4 @@ description: >
 executor: default
 
 steps:
-  - config-scan:
-
+  - config-scan
