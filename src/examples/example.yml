@@ -6,12 +6,12 @@ description: >
 usage:
   version: 2.1
   orbs:
-    scanner: colibrisec/scanner@1.2.3
+    scanner: colibrisec/sec-scanner@1.2.3
   workflows:
-    use-my-orb:
+    scanner:
       jobs:
-        - colibrisec/repo-scan
-        - colibrisec/config-scan
-        - colibrisec/web-scan
-        - colibrisec/api-scan
-        - colibrisec/report
+        - scanner/repo-scan
+        - scanner/config-scan
+        - scanner/web-scan
+        - scanner/api-scan
+        - scanner/report
