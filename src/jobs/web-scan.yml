@@ -1,7 +1,7 @@
 description: >
   Run a DAST Web Scan using ZAProxy
 
-executor: zap
+executor: default
 
 parameters:
   url:
