@@ -10,7 +10,7 @@ filters: &filters
 jobs:
   command-tests:
     docker:
-      - image: cimg/base:current
+      - image: cimg/openjdk:19.0
     steps:
       - checkout
       - sec-scanner/repo-scan:
