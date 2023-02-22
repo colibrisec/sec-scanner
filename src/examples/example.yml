@@ -14,3 +14,4 @@ usage:
         - colibrisec/config-scan
         - colibrisec/web-scan
         - colibrisec/api-scan
+        - colibrisec/report

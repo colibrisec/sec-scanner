@@ -8,6 +8,5 @@ parameters:
     type: string
     description: "URL to Scan"
 steps:
-  - run: java --version
   - web-scan:
       url: << parameters.url >>
