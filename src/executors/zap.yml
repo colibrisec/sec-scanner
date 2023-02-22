@@ -1,10 +1,10 @@
 description: >
-  Zap Proxy Weekly Build Container for performing DAST Scanning
+  Java Container for running OWASP Zaproxy
 docker:
   - image: 'cimg/openjdk:<<parameters.tag>>'
 parameters:
   tag:
-    default: "19.0.2"
+    default: "19.0"
     description: >
       Pick a specific cimg/openjdk image variant:
       https://hub.docker.com/r/cimg/openjdk/tags
