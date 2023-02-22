@@ -1,5 +1,5 @@
 description: >
-  Zap Proxy Weekly Build Container for performing DAST Scanning
+  Default executor
 docker:
   - image: 'cimg/openjdk:<<parameters.tag>>'
 parameters:
