@@ -19,7 +19,9 @@ jobs:
       - sec-scanner/config-scan
       - sec-scanner/web-scan:
           url: "http://example.com"
-      - sec-scanner/chainbench
+      - sec-scanner/chainbench:
+          repo: $CIRCLE_REPOSITORY_URL
+          token: pass
 workflows:
   test-deploy:
     jobs:

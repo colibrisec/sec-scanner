@@ -3,10 +3,17 @@ description: >
 # What will this command do?
 # Descriptions should be short, simple, and clear.
 # Chainbench
-
+parameters:
+  repo:
+    type: string
+    description: "Repo URL"
+  token:
+    type: string
+    description: "Repo Access Token"
 steps:
   - run:
       environment:
-        PARAM_REPO: $CIRCLE_REPOSITORY_URL
-      name: Chain-Bench
+        PARAM_REPO: <<parameters.repo>>
+        PARAM_TOKEN: <<parameters.token>>
+      name: Hello Greeting
       command: <<include(scripts/chainbench.sh)>>
