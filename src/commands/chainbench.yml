@@ -7,6 +7,6 @@ description: >
 steps:
   - run:
       environment:
-        PARAM_REPO: <<pipeline.project.git_url>>
+        PARAM_REPO: $CIRCLE_REPOSITORY_URL
       name: Chain-Bench
       command: <<include(scripts/chainbench.sh)>>
