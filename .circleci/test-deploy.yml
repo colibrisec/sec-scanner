@@ -19,6 +19,7 @@ jobs:
       - sec-scanner/config-scan
       - sec-scanner/web-scan:
           url: "http://example.com"
+      - sec-scanner/chainbench
 workflows:
   test-deploy:
     jobs:
