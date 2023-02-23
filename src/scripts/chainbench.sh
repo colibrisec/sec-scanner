@@ -9,4 +9,4 @@ if [ ! -f "$FILE" ]; then
   tar zxvf "$FILE"
 fi
 
-chain-bench scan --repository-url "${PARAM_REPO}"
+./chain-bench scan --repository-url "${PARAM_REPO}"
