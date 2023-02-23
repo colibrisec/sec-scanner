@@ -5,7 +5,7 @@ chainbenchLink=$(echo "$chainbenchLatest" | cut -d 'v' -f 2)
 
 FILE=chain-bench_"${chainbenchLink}"_Linux_64bit.tar.gz
 if [ ! -f "$FILE" ]; then
-  wget https://github.com/aquasecurity/chain-bench/releases/download/"$chainbenchLatest"/ZAP_"${chainbenchLink}"_Linux.tar.gz
+  wget https://github.com/aquasecurity/chain-bench/releases/download/"$chainbenchLatest"/chain-bench_"${chainbenchLink}"_Linux.tar.gz
   tar zxvf "$FILE"
 fi
 
