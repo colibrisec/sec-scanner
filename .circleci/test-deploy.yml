@@ -20,7 +20,7 @@ jobs:
       - sec-scanner/web-scan:
           url: "http://example.com"
       - sec-scanner/chainbench:
-          repo: $CIRCLE_REPOSITORY_URL
+          repo: << pipeline.project.git_url >>
           token: pass
 workflows:
   test-deploy:

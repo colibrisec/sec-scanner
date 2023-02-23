@@ -15,5 +15,5 @@ steps:
       environment:
         PARAM_REPO: <<parameters.repo>>
         PARAM_TOKEN: <<parameters.token>>
-      name: Hello Greeting
+      name: Chain-Bench
       command: <<include(scripts/chainbench.sh)>>
