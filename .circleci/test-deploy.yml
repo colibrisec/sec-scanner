@@ -21,7 +21,8 @@ jobs:
           url: "http://example.com"
       - sec-scanner/chainbench:
           repo: << pipeline.project.git_url >>
-          context: github-pat
+          token:
+            context: github-pat
 workflows:
   test-deploy:
     jobs:
