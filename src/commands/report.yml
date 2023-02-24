@@ -4,15 +4,29 @@ description: >
 # Descriptions should be short, simple, and clear.
 # Attach report as artifact and post to endpoint
 parameters:
+  server:
+    type: string
+    description: "Reporting Server Type ex: DefectDojo, Postee, SonarQube"
   url:
     type: string
     description: "Reporting Server URL"
   token:
     type: string
     description: "Authorization Token"
+  report:
+    type: string
+    description: "Report file"
+  project:
+    type: string
+    description: "Project Name"
+
 steps:
   - run:
       environment:
         PARAM_URL: <<parameters.url>>
-      name: Hello Greeting
+        PARAM_SERVER: <<parameters.server>>
+        PARAM_TOKEN: <<parameters.token>>
+        PARAM_REPORT: <<paramters.report>>
+        PARAM_PROJECT: <<parameters.project>>
+      name: Push Report to Server
       command: <<include(scripts/report.sh)>>
