@@ -9,6 +9,8 @@ filters: &filters
 
 jobs:
   command-tests:
+    context:
+      - github-pat
     docker:
       - image: cimg/openjdk:19.0
     steps:
@@ -21,8 +23,7 @@ jobs:
           url: "http://example.com"
       - sec-scanner/chainbench:
           repo: << pipeline.project.git_url >>
-          token:
-            context: github-pat
+          token: $token
 workflows:
   test-deploy:
     jobs:
