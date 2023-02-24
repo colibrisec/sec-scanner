@@ -22,8 +22,7 @@ jobs:
       - sec-scanner/chainbench:
           repo: << pipeline.project.git_url >>
           token: << pipeline.github-pat.token >>
-      - sec-scanner/cosign:
-          sign: "vuln"
+
 workflows:
   test-deploy:
     jobs:
