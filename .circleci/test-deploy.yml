@@ -21,7 +21,7 @@ jobs:
           url: "http://example.com"
       - sec-scanner/chainbench:
           repo: << pipeline.project.git_url >>
-          token: $token
+          token: ${token}
 
 workflows:
   test-deploy:
