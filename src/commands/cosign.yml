@@ -1,12 +1,12 @@
 description: >
   Sign scans or SBOMs
 parameters:
-  type:
+  sign:
     type: string
     description: "SBOM or Vulnerability Report"
 steps:
   - run:
       environment:
-        PARAM_TYPE: <<parameters.type>>
+        PARAM_TYPE: <<parameters.sign>>
       name: Cosign
       command: <<include(scripts/cosign.sh)>>
