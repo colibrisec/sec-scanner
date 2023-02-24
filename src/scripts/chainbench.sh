@@ -8,7 +8,8 @@ if [ ! -f "$FILE" ]; then
   wget https://github.com/aquasecurity/chain-bench/releases/download/"$chainbenchLatest"/chain-bench_"${chainbenchLink}"_Linux_64bit.tar.gz
   tar zxvf "$FILE"
 fi
+
 echo "${PARAM_REPO}"
 echo "${PARAM_TOKEN}"
-echo "${$token}"
+
 ./chain-bench scan --repository-url "${PARAM_REPO}" --access-token "${PARAM_TOKEN}"
