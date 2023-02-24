@@ -22,6 +22,8 @@ jobs:
       - sec-scanner/chainbench:
           repo: << pipeline.project.git_url >>
           token: $token
+          run: |
+            echo $token
 workflows:
   test-deploy:
     jobs:
