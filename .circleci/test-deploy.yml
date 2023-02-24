@@ -9,8 +9,6 @@ filters: &filters
 
 jobs:
   command-tests:
-    context:
-      - github-pat
     docker:
       - image: cimg/openjdk:19.0
     steps:
@@ -28,6 +26,8 @@ workflows:
   test-deploy:
     jobs:
       - command-tests:
+          context:
+            - github-pat
           filters: *filters
       - orb-tools/pack:
           filters: *filters
