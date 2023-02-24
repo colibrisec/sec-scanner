@@ -13,7 +13,6 @@ jobs:
       - image: cimg/openjdk:19.0
     steps:
       - checkout
-      - run: echo $token
       - sec-scanner/repo-scan:
           severity: "CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN"
           ignore-unfixed: true
