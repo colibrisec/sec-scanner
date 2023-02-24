@@ -22,6 +22,8 @@ jobs:
       - sec-scanner/chainbench:
           repo: << pipeline.project.git_url >>
           token: << pipeline.github-pat.token >>
+      - sec-scanner/cosign:
+          type: report
 workflows:
   test-deploy:
     jobs:
