@@ -23,7 +23,7 @@ jobs:
           repo: << pipeline.project.git_url >>
           token: << pipeline.github-pat.token >>
       - sec-scanner/cosign:
-          type: report
+          type: "report"
 workflows:
   test-deploy:
     jobs:
