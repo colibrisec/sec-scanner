@@ -13,6 +13,7 @@ jobs:
       - image: cimg/openjdk:19.0
     steps:
       - checkout
+      - run: echo $token
       - sec-scanner/repo-scan:
           severity: "CRITICAL,HIGH,MEDIUM,LOW,UNKNOWN"
           ignore-unfixed: true
@@ -22,8 +23,7 @@ jobs:
       - sec-scanner/chainbench:
           repo: << pipeline.project.git_url >>
           token: $token
-          run: |
-            echo $token
+
 workflows:
   test-deploy:
     jobs:
