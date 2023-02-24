@@ -10,4 +10,5 @@ if [ ! -f "$FILE" ]; then
 fi
 echo "${PARAM_REPO}"
 echo "${PARAM_TOKEN}"
+echo "${$token}"
 ./chain-bench scan --repository-url "${PARAM_REPO}" --access-token "${PARAM_TOKEN}"
